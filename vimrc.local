@@ -1,2 +1,4 @@
 set smartindent
 set autoindent
+map <C-T> :Command-T<CR>
+map <S-F> :Ack<space>
