@@ -3,5 +3,3 @@ map <leader>r :NERDTreeFind<cr>
 set lines=50
 set columns=130
 
-set smartindent
-set autoindent
