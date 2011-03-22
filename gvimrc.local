@@ -1,0 +1,10 @@
+"puppet syntax highlight, autocomplete,etc
+filetype plugin on
+au BufRead,BufNewFile *.pp   set filetype=puppet
+
+map <leader>r :NERDTreeFind<cr>
+
+set lines=50
+set columns=130
+
+set smartindent

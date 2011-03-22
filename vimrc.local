@@ -1,0 +1,6 @@
+"puppet syntax highlight, autocomplete,etc
+filetype plugin on
+au BufRead,BufNewFile *.pp   set filetype=puppet
+"
+"
+set smartindent
