@@ -1,1 +1,1 @@
-+vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
++vim_plugin_task "puppet",           "git://github.com/chrismay/puppet-vim.git"
