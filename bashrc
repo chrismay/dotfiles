@@ -104,7 +104,7 @@ fi
 export EDITOR=vi
 export HISTFILE=~/.history/`date +%Y%m%d`.hist
 export HISTSIZE=100000
-export PATH=$PATH:/var/lib/gems/1.8/bin:/home/cusaab/scripts
+export PATH=$PATH:/var/lib/gems/1.8/bin:/home/cusaab/bin
 export EC2_PRIVATE_KEY=$HOME/.aws/pk-elab-infra.pem
 export EC2_CERT=$HOME/.aws/cert-elab-infra.pem
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
