@@ -28,12 +28,19 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# setting TERM based on COLORTERM
+case $COLORTERM in
+Terminal) export TERM=xterm-color ;;         # this is XFCE Terminal
+gnome-terminal) export TERM=xterm-color ;;   # this is gnome-terminal
+wterm-xpm) export TERM=xterm ;;              # this is wterm
+Eterm) export TERM=Eterm ;;                  # this is Eterm
+1) export TERM=xterm-color ;;                # this is lxterminal, konsole, yakuake, uxterm, Mac OSX terminal, putty ...
+# rxvt) ;;                                   # xterm, aterm, rxvt-unicode
+esac
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
-esac
-case "$COLORTERM" in
-  gnome-terminal) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
