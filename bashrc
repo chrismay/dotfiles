@@ -110,16 +110,38 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export EDITOR=vi
-export HISTFILE=~/.history/`date +%Y%m%d`.hist
-export HISTSIZE=100000
+export HISTFILE=~/.history/all.hist
+export HISTSIZE=1000000
 export PATH=$PATH:/var/lib/gems/1.8/bin:/home/cusaab/bin
-export EC2_PRIVATE_KEY=$HOME/.aws/pk-elab-infra.pem
-export EC2_CERT=$HOME/.aws/cert-elab-infra.pem
+export JBOSS_HOME=/opt/jboss
+export JBOSS_SERVER_BASE=~/jboss/server
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export EC2_URL=https://eu-west-1.ec2.amazonaws.com
+export MAVEN_OPTS="-Xms256m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=512m  -Djava.security.egd=file:///dev/urandom"
+#export MAVEN_OPTS="$MAVEN_OPTS  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5004"
 alias  pbcopy='xclip -selection clipboard'
 alias  mat='cd /opt/MemoryAnalyzer; ./MemoryAnalyzer'
-function br
-{
-  `boom echo ${1}`
-}
+
+alias dev='cd ~/code/traf/dev'
+alias serv='cd ~/code/traf/dev/services/logistics/service'
+alias comp="cd ~/code/traf/dev/services/logistics/component-tests"
+alias mdl='cd ~/code/traf/dev/mdl/logistics'
+alias mdlp='cd ~/code/traf/dev/mdl/logistics/public/definitions/lib'
+alias mdli='cd ~/code/traf/dev/mdl/logistics/internal/definitions/lib'
+
+alias sqldev='nohup /opt/sqldeveloper/sqldeveloper/bin/sqldeveloper >/dev/null 2>&1 &'
+alias rabbit-msg='tail -f ~/jboss/server/trafigura/log/server.log | ~/code/alfie/scripts/rabbit-events'
+alias sqlplus="rlwrap sqlplus64"
+alias sqlp="rlwrap sqlplus64 traf_logistics_dev20/traf_logistics_dev20@//titandbserver2:1521/traf2"
+
+alias acg='cd ~/code/warwick/acg/acg'
+alias act='cd ~/code/warwick/acg/acg-ac-tests'
+alias mci="mvn clean install"
+alias mbr='MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5004" mvn clean bees:run -Dbees.environment=local'
+alias mcts="mvn clean test -Dspring.profiles.active=default"
+alias mcc="mvn cobertura:cobertura && firefox target/site/cobertura/index.html"
+alias notes="gvim ~/Dropbox/working_notes.md"
+
+alias asq="mysql -u acg -pacg acg"
+export BEES_HOME=~/cloudbees-sdk-1.2.2
+export PATH=$PATH:$BEES_HOME
+
