@@ -52,11 +52,20 @@ def markdown(text)
     :strikethrough,
     :space_after_headers
   ]))
-  markdown.render(text)
+  markdown.render(preprocess(text))
 end
 
 def optionize(options)
   options.inject({}) { |memo, option| memo[option] = true; memo }
 end
+
+def preprocess(text)
+  v1_links(text)
+end
+def v1_links(text)
+    text.gsub(/([DIS]-[0-9]+)/,'[\1](http://versionone/VersionOne/Search.mvc/advanced?q=\1)')
+end
+
+
 
 puts markdown(ARGF.read)
