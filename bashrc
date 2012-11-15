@@ -112,7 +112,7 @@ fi
 export EDITOR=vi
 export HISTFILE=~/.history/all.hist
 export HISTSIZE=1000000
-export PATH=$PATH:/var/lib/gems/1.8/bin:/home/cusaab/bin
+export PATH=$PATH:/var/lib/gems/1.8/bin:/home/chrismay/bin
 export JBOSS_HOME=/opt/jboss
 export JBOSS_SERVER_BASE=~/jboss/server
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
