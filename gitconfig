@@ -1,0 +1,28 @@
+[user]
+          name = Chris May
+          email = chris.may@blackpepper.co.uk
+[alias]
+  co = checkout
+  st = status
+  locate = "!locate() { git ls-files \"*$1*\"; }; locate" 
+[color]
+          ui = always
+[core]
+          whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[merge]
+	xtool = meldscript
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[mergetool "meldscript"]
+  cmd = git_merge_meld.sh $LOCAL $BASE $REMOTE $MERGED
+  prompt = false
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1216x1007+575+25
+[gui]
+    fontui = -family \"new century schoolbook\" -size 10 -weight bold -slant roman -underline 0 -overstrike 0
+    fontdiff = -family clean -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+[rerere]
+	enabled = 1
