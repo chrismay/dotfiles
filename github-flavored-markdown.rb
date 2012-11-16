@@ -60,10 +60,13 @@ def optionize(options)
 end
 
 def preprocess(text)
-  v1_links(text)
+  jira_links(v1_links(text))
 end
 def v1_links(text)
     text.gsub(/([DIS]-[0-9]+)/,'[\1](http://versionone/VersionOne/Search.mvc/advanced?q=\1)')
+end
+def jira_links(text)
+    text.gsub(/([A-Z]{3,4}-[0-9]+)/,'[\1](https://jira.blackpepper.co.uk/browse/\1)')
 end
 
 
