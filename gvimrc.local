@@ -1,7 +1,0 @@
-map <leader>r :NERDTreeFind<cr>
-set gfn=Source\ Code\ Pro\ Semi-Bold\ 11
-set lines=50
-set columns=130
-colorscheme solarized
-autocmd VimEnter * set vb t_vb=
-
