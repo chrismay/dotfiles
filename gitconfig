@@ -5,6 +5,7 @@
   co = checkout
   st = status
   locate = "!locate() { git ls-files \"*$1*\"; }; locate" 
+	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 [color]
           ui = always
 [core]
