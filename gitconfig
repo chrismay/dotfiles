@@ -4,8 +4,20 @@
 [alias]
   co = checkout
   st = status
-  locate = "!locate() { git ls-files \"*$1*\"; }; locate" 
+  locate = "!git ls-files | grep -i " 
 	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+  filelog = log -u
+  fl = log -u
+   #list commands
+  le = log --oneline --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  lc = "!f() { git ll "$1"^.."$1"; }; f"
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  #list all aliases
+  la = "!git config -l | grep alias | cut -c 7-"
 [color]
           ui = always
 [core]
