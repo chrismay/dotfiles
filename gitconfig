@@ -4,7 +4,7 @@
 [alias]
   co = checkout
   st = status
-  locate = "!git ls-files $GIT_PREFIX | grep -i "
+  locate = "!cd \"$(pwd)/$GIT_PREFIX\" && git ls-files | grep -i "
 	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
   filelog = log -u
   fl = log -u
