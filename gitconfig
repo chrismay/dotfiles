@@ -18,10 +18,13 @@
   lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
   #list all aliases
   la = "!git config -l | grep alias | cut -c 7-"
+  pull-request-tabula = !sh -c 'stash pull-request develop @wga_csucew @cuslaj @cusxad @cusmbg @cuslat @zoe @chrismay'
 [color]
           ui = always
 [core]
           whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[push]
+      default=upstream
 [merge]
 	xtool = meldscript
 [diff]
@@ -33,7 +36,11 @@
   prompt = false
 [giggle]
 	main-window-maximized = false
-	main-window-geometry = 1216x1007+575+25
+	main-window-geometry = 1535x1007+255+96
+	file-view-vpane-position = 685
+	history-view-vpane-position = 866
+	main-window-view = FileView
+	file-view-hpane-position = 628
 [gui]
     fontui = -family \"new century schoolbook\" -size 10 -weight bold -slant roman -underline 0 -overstrike 0
     fontdiff = -family clean -size 10 -weight normal -slant roman -underline 0 -overstrike 0

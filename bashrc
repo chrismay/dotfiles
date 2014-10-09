@@ -116,33 +116,51 @@ export PATH=$PATH:/var/lib/gems/1.8/bin:/home/chrismay/bin
 export PATH=$PATH:~/code/Scalex-CLI/bin
 export JBOSS_HOME=/opt/jboss
 export JBOSS_SERVER_BASE=~/jboss/server
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export MAVEN_OPTS="-Xms256m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=512m  -Djava.security.egd=file:///dev/urandom"
+
+#export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+#export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export LESS='-R -i-P%f (%i/%m) Line %lt/%L'
+# TRAF settings
+#export MAVEN_OPTS="-Xms256m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=512m  -Djava.security.egd=file:///dev/urandom"
+# debug settings
 #export MAVEN_OPTS="$MAVEN_OPTS  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5004"
+export JAVA6_HOME=/usr/lib/jvm/java-6-oracle
+alias wake='~/bin/wake-phone.sh'
 alias  pbcopy='xclip -selection clipboard'
 alias  mat='cd /opt/MemoryAnalyzer; ./MemoryAnalyzer'
 
-alias dev='cd ~/code/traf/dev'
+alias dev='cd ~/code/traf/titan'
 alias serv='cd ~/code/traf/dev/services/logistics/service'
+alias extr='cd ~/code/traf/dev/services/logistics/extract'
 alias comp="cd ~/code/traf/dev/services/logistics/component-tests"
+alias pers="cd ~/code/traf/dev/services/logistics/persistence"
 alias mdl='cd ~/code/traf/dev/mdl/logistics'
 alias mdlp='cd ~/code/traf/dev/mdl/logistics/public/definitions/lib'
 alias mdli='cd ~/code/traf/dev/mdl/logistics/internal/definitions/lib'
+alias loglog='less -n +G ~/jboss/server/trafigura/log/titan.logistics.log'
+alias mls="mvn clean install -f ./logistics-pom.xml -Pserver"
 
 alias sqldev='nohup /opt/sqldeveloper/sqldeveloper/bin/sqldeveloper >/dev/null 2>&1 &'
 alias rabbit-msg='tail -f ~/jboss/server/trafigura/log/server.log | ~/code/alfie/scripts/rabbit-events'
 alias sqlplus="rlwrap sqlplus64"
 alias sqlp="rlwrap sqlplus64 traf_logistics_dev20/traf_logistics_dev20@//titandbserver2:1521/traf2"
 
-alias acg='cd ~/code/warwick/acg/acg'
-alias act='cd ~/code/warwick/acg/acg-ac-tests'
+alias acg='cd ~/code/warwick/wss/webapp'
+alias act='cd ~/code/warwick/wss/acc-tests'
 alias mci="mvn clean install"
-alias mbr='MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5004" mvn clean bees:run -Dbees.environment=local'
-alias mcts="mvn clean test -Dspring.profiles.active=default"
+alias mbr='MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5004 -Xms256m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=512m" mvn clean tomcat6:run -Plocal -Duser.timezone=GMT'
+alias mcts="mvn clean test -Dspring.profiles.active=default -Pheadless"
 alias mcc="mvn cobertura:cobertura && firefox target/site/cobertura/index.html"
 alias notes="gvim ~/Dropbox/working_notes.md"
 
+alias qunit="phantomjs ~/code/qunit/addons/phantomjs/runner.js "
+
+alias tab='cd ~/code/warwick/tabula'
+
 alias asq="mysql -u acg -pacg acg"
+function sublime() { /opt/SublimeText2/sublime_text "$@" & }
+
 export BEES_HOME=~/cloudbees-sdk-1.2.2
 export PATH=$PATH:$BEES_HOME
+export PATH=$PATH:/opt/play
 
